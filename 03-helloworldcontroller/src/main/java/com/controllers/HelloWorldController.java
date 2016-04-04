@@ -8,6 +8,6 @@ public class HelloWorldController {
 
 	@RequestMapping("/ola")
 	public String hello(){
-		return "hello";
+		return "hello.jsp";
 	}
 }
