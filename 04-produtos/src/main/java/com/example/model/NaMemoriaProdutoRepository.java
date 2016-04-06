@@ -34,4 +34,10 @@ public class NaMemoriaProdutoRepository implements ProdutoRepository {
 		return produtos;
 	}
 
+	@Override
+	public Produto obeterPorId(long id) {
+		// TODO Auto-generated method stub
+		return produtos.stream().filter(p -> p.getId() == id).findFirst().get();
+	}
+
 }

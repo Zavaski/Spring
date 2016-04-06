@@ -17,4 +17,9 @@ public class ProdutoServiceImpl implements ProdutoService {
 		return produtoRepository.obterTodos();
 	}
 
+	@Override
+	public Produto obeterPorId(long id) {
+		// TODO Auto-generated method stub
+		return produtoRepository.obeterPorId(id);
+	}
 }
