@@ -1,4 +1,4 @@
-package br.com.zvsk.model;
+package com.example.model;
 
 public class Produto {
 	private long id;
