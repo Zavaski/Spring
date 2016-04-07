@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.models;
 
 import java.util.List;
 
@@ -13,13 +13,16 @@ public class ProdutoServiceImpl implements ProdutoService {
 
 	@Override
 	public List<Produto> obterTodos() {
-		// TODO Auto-generated method stub
 		return produtoRepository.obterTodos();
 	}
 
 	@Override
-	public Produto obeterPorId(long id) {
-		// TODO Auto-generated method stub
-		return produtoRepository.obeterPorId(id);
+	public Produto obterPorId(long id) {
+		return produtoRepository.obterPorId(id);
+	}
+
+	@Override
+	public List<Produto> obterPorCategoria(long id) {
+		return produtoRepository.obterPorCategoria(id);
 	}
 }

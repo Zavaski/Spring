@@ -1,7 +1,8 @@
-package com.example.model;
+package com.example.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -42,9 +43,15 @@ public class NaMemoriaProdutoRepository implements ProdutoRepository {
 	}
 
 	@Override
-	public Produto obeterPorId(long id) {
+	public Produto obterPorId(long id) {
 		// TODO Auto-generated method stub
 		return produtos.stream().filter(p -> p.getId() == id).findFirst().get();
+	}
+
+	@Override
+	public List<Produto> obterPorCategoria(long id) {
+		// TODO Auto-generated method stub
+		return produtos.stream().filter(p -> p.getCategoria().getId() == id).collect(Collectors.toList());
 	}
 
 }
