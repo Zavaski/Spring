@@ -44,14 +44,25 @@ public class NaMemoriaProdutoRepository implements ProdutoRepository {
 
 	@Override
 	public Produto obterPorId(long id) {
-		// TODO Auto-generated method stub
-		return produtos.stream().filter(p -> p.getId() == id).findFirst().get();
+		for(Produto p : produtos){
+			if(p.getId() == id){
+				return p;
+			}
+		}
+		//return produtos.stream().filter(p -> p.getId() == id).findFirst().get();
+		return null;
 	}
 
 	@Override
 	public List<Produto> obterPorCategoria(long id) {
-		// TODO Auto-generated method stub
-		return produtos.stream().filter(p -> p.getCategoria().getId() == id).collect(Collectors.toList());
+		for(Produto p : produtos){
+			if(p.getCategoria().getId() == id){
+				
+				return produtos;
+			}
+		}
+	//	return produtos.stream().filter(p -> p.getCategoria().getId() == id).collect(Collectors.toList());
+		return produtos;
 	}
 
 }
