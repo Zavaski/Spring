@@ -1,5 +1,6 @@
 package com.pucpr.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,20 +21,20 @@ public class Disciplina {
 	@ManyToOne
 	@JoinColumn(name = "professor_id")
 	private Professor professor;
-	
-	private List<Bloco> blocos;
-	
 	@ManyToOne
 	@JoinColumn(name = "curso_id")
 	private Curso curso;
-	
-	@OneToMany(mappedBy="horario")
+	@OneToMany(mappedBy="disciplina")
 	private List<Horario> horarios;
-	
 	@ManyToOne
 	@JoinColumn(name = "periodo_id")
 	private Periodo periodo;
+	@ManyToOne
+	@JoinColumn(name = "instituicao_id")
+	private Instituicao instituicao;
 	
+	/*###################### SET(s) - GET(s) ############################## */
+
 	public Integer getId() {
 		return id;
 	}
@@ -52,14 +53,6 @@ public class Disciplina {
 	public void setCodigoDisciplina(String codigoDisciplina) {
 		this.codigoDisciplina = codigoDisciplina;
 	}
-
-	public List<Bloco> getBlocos() {
-		return blocos;
-	}
-	public void setBlocos(List<Bloco> blocos) {
-		this.blocos = blocos;
-	}
-
 	
 	public Professor getProfessor() {
 		return professor;
@@ -74,6 +67,9 @@ public class Disciplina {
 		this.curso = curso;
 	}
 	public List<Horario> getHorarios() {
+		if(null == horarios){
+			horarios = new ArrayList<>();
+		}
 		return horarios;
 	}
 	public void setHorarios(List<Horario> horarios) {
@@ -84,6 +80,12 @@ public class Disciplina {
 	}
 	public void setPeriodo(Periodo periodo) {
 		this.periodo = periodo;
+	}
+	public Instituicao getInstituicao() {
+		return instituicao;
+	}
+	public void setInstituicao(Instituicao instituicao) {
+		this.instituicao = instituicao;
 	}
 
 	

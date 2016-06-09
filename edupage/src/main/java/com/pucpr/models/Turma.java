@@ -17,6 +17,9 @@ public class Turma {
 	@ManyToOne
 	@JoinColumn(name = "periodo_id")
 	private Periodo periodo;
+	
+	
+	/*###################### SET(s) - GET(s) ############################## */
 	public Integer getId() {
 		return id;
 	}

@@ -1,10 +1,13 @@
 package com.pucpr.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
@@ -16,9 +19,11 @@ public class Curso {
 	private Integer codigoCurso;
 	private String nomeCurso;
 	private Integer quantidadePeriodos;
-	
 	@OneToMany(mappedBy="curso")
 	private List<Disciplina> disciplinas;
+	
+	/*###################### SET(s) - GET(s) ############################## */
+
 	public Integer getId() {
 		return id;
 	}
@@ -44,12 +49,15 @@ public class Curso {
 		this.quantidadePeriodos = quantidadePeriodos;
 	}
 	public List<Disciplina> getDisciplinas() {
+		if(null == disciplinas){
+			disciplinas = new ArrayList<>();
+		}
 		return disciplinas;
 	}
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	
+
 	
 
 }

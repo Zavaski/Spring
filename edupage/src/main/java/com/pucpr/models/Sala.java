@@ -19,6 +19,7 @@ public class Sala {
 	private Bloco bloco;
 	
 	
+	/*###################### SET(s) - GET(s) ############################## */
 	public Integer getId() {
 		return id;
 	}

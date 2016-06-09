@@ -17,10 +17,12 @@ public class Horario {
 	private Date horarioInicial;
 	private Date horarioFinal;
 	private String diaDaSemana;
-	
 	@ManyToOne
 	@JoinColumn(name = "disciplina_id")
 	private Disciplina disciplina;
+
+	/*###################### SET(s) - GET(s) ############################## */
+
 	public Date getHorarioInicial() {
 		return horarioInicial;
 	}
