@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name = "horario")
@@ -15,6 +17,9 @@ public class Horario {
 	private Date horarioInicial;
 	private Date horarioFinal;
 	private String diaDaSemana;
+	
+	@ManyToOne
+	@JoinColumn(name = "disciplina_id")
 	private Disciplina disciplina;
 	public Date getHorarioInicial() {
 		return horarioInicial;

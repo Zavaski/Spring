@@ -3,6 +3,8 @@ package com.pucpr.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +14,8 @@ public class Turma {
 	@GeneratedValue
 	private Integer id;
 	private String sigla;
+	@ManyToOne
+	@JoinColumn(name = "periodo_id")
 	private Periodo periodo;
 	public Integer getId() {
 		return id;

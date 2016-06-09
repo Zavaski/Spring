@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "professor")
@@ -14,6 +15,7 @@ public class Professor {
 	private Integer id;
 	private String nome;
 	private Integer codigoProfessor;
+	@OneToMany(mappedBy="professor")
 	private List<Disciplina> disciplinas;
 	public Integer getId() {
 		return id;

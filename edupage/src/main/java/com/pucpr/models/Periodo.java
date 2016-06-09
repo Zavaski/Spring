@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "periodo")
@@ -13,8 +14,13 @@ public class Periodo {
 	@GeneratedValue
 	private Integer id;
 	private Integer semestre;
+	
+	@OneToMany(mappedBy="periodo")
 	private List<Turma> turmas;
+	
+	@OneToMany(mappedBy="periodo")
 	private List<Disciplina> disciplinas;
+	
 	public Integer getId() {
 		return id;
 	}

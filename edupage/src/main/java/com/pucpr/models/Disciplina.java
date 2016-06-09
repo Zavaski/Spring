@@ -5,6 +5,9 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "disciplina")
@@ -14,11 +17,23 @@ public class Disciplina {
 	private Integer id;
 	private String nome;
 	private String codigoDisciplina;
-	private List<Professor> professores;
+	@ManyToOne
+	@JoinColumn(name = "professor_id")
+	private Professor professor;
+	
 	private List<Bloco> blocos;
-	private List<Curso> cursos;
+	
+	@ManyToOne
+	@JoinColumn(name = "curso_id")
+	private Curso curso;
+	
+	@OneToMany(mappedBy="horario")
 	private List<Horario> horarios;
-	private List<Periodo> periodos;
+	
+	@ManyToOne
+	@JoinColumn(name = "periodo_id")
+	private Periodo periodo;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -37,23 +52,26 @@ public class Disciplina {
 	public void setCodigoDisciplina(String codigoDisciplina) {
 		this.codigoDisciplina = codigoDisciplina;
 	}
-	public List<Professor> getProfessores() {
-		return professores;
-	}
-	public void setProfessores(List<Professor> professores) {
-		this.professores = professores;
-	}
+
 	public List<Bloco> getBlocos() {
 		return blocos;
 	}
 	public void setBlocos(List<Bloco> blocos) {
 		this.blocos = blocos;
 	}
-	public List<Curso> getCursos() {
-		return cursos;
+
+	
+	public Professor getProfessor() {
+		return professor;
 	}
-	public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+	public Curso getCurso() {
+		return curso;
+	}
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 	public List<Horario> getHorarios() {
 		return horarios;
@@ -61,12 +79,13 @@ public class Disciplina {
 	public void setHorarios(List<Horario> horarios) {
 		this.horarios = horarios;
 	}
-	public List<Periodo> getPeriodos() {
-		return periodos;
+	public Periodo getPeriodo() {
+		return periodo;
 	}
-	public void setPeriodos(List<Periodo> periodos) {
-		this.periodos = periodos;
+	public void setPeriodo(Periodo periodo) {
+		this.periodo = periodo;
 	}
+
 	
 	
 	

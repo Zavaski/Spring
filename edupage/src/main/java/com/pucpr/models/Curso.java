@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "curso")
@@ -15,6 +16,8 @@ public class Curso {
 	private Integer codigoCurso;
 	private String nomeCurso;
 	private Integer quantidadePeriodos;
+	
+	@OneToMany(mappedBy="curso")
 	private List<Disciplina> disciplinas;
 	public Integer getId() {
 		return id;

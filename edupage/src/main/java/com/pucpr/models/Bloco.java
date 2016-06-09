@@ -18,7 +18,7 @@ public class Bloco {
 	@OneToMany(mappedBy="bloco")
 	private List<Sala> salas;
 	
-	@OneToMany(mappedBy="bloco")
+	// aqui é manytomany
 	private List<Disciplina> disciplinas;
 	
 	
