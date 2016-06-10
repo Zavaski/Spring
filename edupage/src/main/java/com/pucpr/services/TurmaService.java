@@ -6,4 +6,6 @@ import com.pucpr.models.Turma;
 
 public interface TurmaService {
 	List<Turma> listar();
+	Turma selecionarPorId(int id);
+
 }

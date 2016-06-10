@@ -15,8 +15,12 @@ public class TurmaServiceImpl implements TurmaService{
 	
 	@Override
 	public List<Turma> listar() {
-		// TODO Auto-generated method stub
 		return turmaRepository.listar();
+	}
+
+	@Override
+	public Turma selecionarPorId(int id) {
+		return turmaRepository.selecionarPorId(id);
 	}
 
 }
