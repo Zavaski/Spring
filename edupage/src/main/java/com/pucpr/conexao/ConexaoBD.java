@@ -1,4 +1,4 @@
-package com.pucpr.models;
+package com.pucpr.conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
