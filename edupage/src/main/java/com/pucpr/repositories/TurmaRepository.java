@@ -1,4 +1,4 @@
-package com.pucpr.repository;
+package com.pucpr.repositories;
 
 import java.util.List;
 

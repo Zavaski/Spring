@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pucpr.models.Turma;
-import com.pucpr.repository.TurmaRepository;
+import com.pucpr.repositories.TurmaRepository;
 
 @Service
 public class TurmaServiceImpl implements TurmaService{

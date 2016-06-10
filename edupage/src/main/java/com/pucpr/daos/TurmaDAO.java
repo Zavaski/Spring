@@ -1,4 +1,4 @@
-package com.pucpr.dao;
+package com.pucpr.daos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.pucpr.models.Turma;
-import com.pucpr.repository.TurmaRepository;
+import com.pucpr.repositories.TurmaRepository;
 
 @Primary
 @Repository
