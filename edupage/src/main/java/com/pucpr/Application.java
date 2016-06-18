@@ -28,7 +28,7 @@ public class Application {
 	public LocalContainerEntityManagerFactoryBean siteEntityManagerFactoryBean(EntityManagerFactoryBuilder builder){
 		return builder.dataSource(siteDataSourceBean())
 					  .packages("com.pucpr.models")
-					  .persistenceUnit("lojaPU")
+					  .persistenceUnit("sistema")
 					  .build();
 	}
 
